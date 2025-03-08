@@ -81,15 +81,15 @@ def test_anagram_detection(functions):
     tests = [test1, test2, test3, test4, test5, test6, test7]
     exp_results = [True, True, False, True, False, True, False]
 
+    print(f"{'Function':^25} {'Arguments':^20} {'Result':^20}")
     for function in functions:
         for test, expected_result in zip(tests, exp_results):
             result = function(*test)
             assert result == expected_result, \
-                f"function: {function.__name__} -- args: {test} -- exp_result: {expected_result} vs result: {result}"
-            print(f"function: {function.__name__} -- args: {test} -- result: {result}")
+                f"function: {function.__name__}, arguments: {test}, expected: {expected_result} -- got: {result}"
+            print(f"{function.__name__:<25} {str(test):<20} {str(result):^20}")
         print()
 
-            
 
 if __name__ == "__main__":
 
@@ -97,6 +97,6 @@ if __name__ == "__main__":
                             anagram_detection_v3, anagram_detection_v4,
                             anagram_detection_v5, anagram_detection_v6]
 
-    test_anagram_detection(functions_under_test)
 
+    test_anagram_detection(functions_under_test)
 

@@ -8,7 +8,7 @@ def finding_prime(number):
 
 def prime_numbers(number):
     result = []
-    for i in range(1, abs(number)):
+    for i in range(2, abs(number)):
         if finding_prime(i) is True:
             result.append(str(i))
     return ' '.join(result)
@@ -16,7 +16,7 @@ def prime_numbers(number):
 
 def prime_numbers_v2(number):
     result = []
-    for num in range(1, abs(number)):
+    for num in range(2, abs(number)):
         for i in range(2, num):
             if num % i == 0:
                 break
